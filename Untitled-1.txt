@@ -17,5 +17,21 @@ git commit -m "이번 확정본에 대한 설명"
 git push origin master
 (다른 가지로 발행하려면 master 대신 브랜치 이름 입력)
 
+브랜치 만들기
+git branch <branch>
+
+브랜치 확인하기
+git branch
+
+다른 브랜치로 갈아타기
+git checkout <branch>
+
+브랜치 생성과 함께 체크아웃 하기 (위의 방식 통합)
+git checkout -b <branch>
+
+
+
 참고 페이지
 - https://rogerdudler.github.io/git-guide/index.ko.html
+
+
