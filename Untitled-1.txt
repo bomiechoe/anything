@@ -29,6 +29,10 @@ git checkout <branch>
 브랜치 생성과 함께 체크아웃 하기 (위의 방식 통합)
 git checkout -b <branch>
 
+master에 병합하기
+현재 브랜치의 HEAD로 병합되므로 master 브랜치로 이동하여 병합한다.
+git checkout master
+
 
 
 참고 페이지
