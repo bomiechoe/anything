@@ -1,1 +1,21 @@
-GIT을 익히기 위한 텅 빈 프로젝트!
+## GIT을 익히기 위한 텅 빈 프로젝트!
+
+새로운 git 저장소 만들기
+git init
+
+원격 서버의 주소를 연결
+git remote add origin <원격 서버 주소>
+
+변경된 파일은 아래 명령어로 인덱스에 추가
+git add <파일 이름>
+git add *
+
+변경된 파일 HEAD에 반영
+git commit -m "이번 확정본에 대한 설명"
+
+로컬 저장소의 HEAD에서 원격 서버로 올리기
+git push origin master
+(다른 가지로 발행하려면 master 대신 브랜치 이름 입력)
+
+참고 페이지
+- https://rogerdudler.github.io/git-guide/index.ko.html
