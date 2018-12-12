@@ -1,39 +1,84 @@
 ## GIT을 익히기 위한 텅 빈 프로젝트!
 
 새로운 git 저장소 만들기
-git init
+>> git init
 
 원격 서버의 주소를 연결
-git remote add origin <원격 서버 주소>
+>> git remote add origin <원격 서버 주소>
 
 변경된 파일은 아래 명령어로 인덱스에 추가
-git add <파일 이름>
-git add *
+>> git add <파일 이름>
+>> git add *
 
 변경된 파일 HEAD에 반영
-git commit -m "이번 확정본에 대한 설명"
+>> git commit -m "이번 확정본에 대한 설명"
 
 로컬 저장소의 HEAD에서 원격 서버로 올리기
-git push origin master
 (다른 가지로 발행하려면 master 대신 브랜치 이름 입력)
+>> git push origin master
+
+
+
+[브랜치]
 
 브랜치 만들기
-git branch <branch>
+>> git branch <branch>
 
 브랜치 확인하기
-git branch
+>> git branch
 
 다른 브랜치로 갈아타기
-git checkout <branch>
+>> git checkout <branch>
 
 브랜치 생성과 함께 체크아웃 하기 (위의 방식 통합)
-git checkout -b <branch>
+>> git checkout -b <branch>
 
-master에 병합하기
-현재 브랜치의 HEAD로 병합되므로 master 브랜치로 이동하여 병합한다.
-git checkout master
+브랜치 지우기
+>> git branch -d <branch>
 
---
+[브랜치 통합]
+1. merge
+2. rebase
+
+브랩치 merge
+merge 명령어에 병합할 커밋 이름을 넣어 실행하면, 커밋 내용이 'HEAD'가 가리키고 있는 브랜치에 넣어집니다. 
+'HEAD'는 현재 사용중인 브랜치에 위치하게 됩니다
+
+>> git branch <branch1>
+>> git branch <branch2>
+
+>> git checkout <branch1>
+>> vim example.txt
+>> git add example.txt
+>> git commit -m 'branch1 수정'
+
+>> git checkout <branch2>
+>> vim example.txt
+>> git commit -m 'branch2 수정'
+
+>> git checkout master
+
+>> git merge <branch1>
+
+>> git merge <branch2>
+
+>>>> confict error 
+>>>> example.txt 충돌 부분을 수정.
+
+>> git add example.txt
+>> git commit -m 'branch2 브랜치 병합'
+
+
+브랜치 rebase
+>> git reset --hard HEAD~   (위에서 병합한 마지막 커밋 되돌리기)
+
+>> git checkout <branch2>
+>> git rebase master
+>> git add example.txt
+>> git rebase --continue
+
+>> git checkout master
+>> git merge <branch2>
 
 
 참고 페이지
