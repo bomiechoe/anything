@@ -1,0 +1,64 @@
+[브랜치]
+
+브랜치 만들기
+>> git branch <branch>
+
+브랜치 확인하기
+>> git branch
+
+다른 브랜치로 갈아타기
+>> git checkout <branch>
+
+브랜치 생성과 함께 체크아웃 하기 (위의 방식 통합)
+>> git checkout -b <branch>
+
+브랜치 지우기
+>> git branch -d <branch>
+
+[브랜치 통합]
+1. merge
+2. rebase
+
+브랜치 merge
+merge 명령어에 병합할 커밋 이름을 넣어 실행하면, 커밋 내용이 'HEAD'가 가리키고 있는 브랜치에 넣어집니다. 
+'HEAD'는 현재 사용중인 브랜치에 위치하게 됩니다
+
+>> git branch <branch1>
+>> git branch <branch2>
+
+>> git checkout <branch1>
+>> vim example.txt
+>> git add example.txt
+>> git commit -m 'branch1 수정'
+
+>> git checkout <branch2>
+>> vim example.txt
+>> git commit -m 'branch2 수정'
+
+>> git checkout master
+
+>> git merge <branch1>
+
+>> git merge <branch2>
+
+>>>> confict error 
+>>>> example.txt 충돌 부분을 수정.
+
+>> git add example.txt
+>> git commit -m 'branch2 브랜치 병합'
+
+
+브랜치 rebase
+>> git reset --hard HEAD~   (위에서 병합한 마지막 커밋 되돌리기)
+
+>> git checkout <branch2>
+>> git rebase master
+>> git add example.txt
+>> git rebase --continue
+
+>> git checkout master
+>> git merge <branch2>
+
+참고 페이지
+- https://rogerdudler.github.io/git-guide/index.ko.html
+- https://backlog.com/git-tutorial/kr/
